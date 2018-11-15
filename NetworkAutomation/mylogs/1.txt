@@ -1,0 +1,31 @@
+Connecting to the device: 192.168.10.3
+Traceback (most recent call last):
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\netmiko\base_connection.py", line 738, in establish_connection
+    self.remote_conn_pre.connect(**ssh_connect_params)
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\paramiko\client.py", line 338, in connect
+    retry_on_signal(lambda: sock.connect(addr))
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\paramiko\util.py", line 279, in retry_on_signal
+    return function()
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\paramiko\client.py", line 338, in <lambda>
+    retry_on_signal(lambda: sock.connect(addr))
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "runner.py", line 44, in <module>
+    connection = netmiko.ConnectHandler(**device)
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\netmiko\ssh_dispatcher.py", line 190, in ConnectHandler
+    return ConnectionClass(*args, **kwargs)
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\netmiko\base_connection.py", line 245, in __init__
+    self.establish_connection()
+  File "C:\Users\vinurad\AppData\Local\Programs\Python\Python36\lib\site-packages\netmiko\base_connection.py", line 743, in establish_connection
+    raise NetMikoTimeoutException(msg)
+netmiko.ssh_exception.NetMikoTimeoutException: Connection to device timed-out: cisco_ios 192.168.10.3:22
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "runner.py", line 68, in <module>
+    print('Failed to '+ device['ip']+exception)
+TypeError: must be str, not NetMikoTimeoutException
