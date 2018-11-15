@@ -13,10 +13,7 @@ import subprocess
 import socket
 import sys
 
-# def command():
-	# res = subprocess.Popen(["tail","-n","1","/u01/suntec_iptv/processcontainer_new/Instance1/bin/nohup.out"],stdout=subprocess.PIPE)
-	# obj= res.communicate()
-	# return list(obj)[0]#.rstrip('\r\n')
+
 
 	
 def checknew():
@@ -33,7 +30,7 @@ def checknew():
 		fo.close()
 def command():
 	#alarm = False
-	error= ['Time','Taken','For','TPE']#['TBMS','Server','Pause','Complete']
+	error= ['Error,as,list,of,words']
 	shutil.copy("path")
 	fo=open('Position.txt','r')
 	current = int(fo.readlines()[0].rstrip())
@@ -90,14 +87,7 @@ if __name__=="__main__":
 	else:
 		print('Normal')
 		
-# if __name__== "__main__":
-	# while True:	
-		# while True:
-			# flag = check(command())
-			# if flag:
-				# send_mail('IPTV.Alerts@sltiptv.lk','vinuradedu@gmail.com','EPG file updating error @:' + ctime(),"Dear Support team, \r\n \r\n This is to inform you that, due to some unexpected circumstances, the following list of EPG files were failed during the EPG-updating process. Please go through the attached EPG files for further information. \r\n \r\n *** This is an automatically generated mail, please do not reply this. \r\n \r\n Regards!")
-				#time.sleep(2)
-				# break
+
 				
 
 	
